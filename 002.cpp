@@ -1,4 +1,6 @@
-#include "stdafx.h" #include "iostream" #include "sstream"
+#include "stdafx.h"
+#include "iostream"
+#include "sstream"
 
 using namespace std;
 
@@ -10,10 +12,7 @@ for (string string; getline(cin, string); ) {
 	for (int i = 0; i < 10; ++i) {
 		if (!(stream >> s[i])) {
 			failure = true;
-			break;
-		}
-	}
-
+			break;}	}
 	max1 = s[1];
 
 	if (!failure) {
@@ -26,7 +25,7 @@ for (string string; getline(cin, string); ) {
 		break;
 	}
 	else {
-		cout << "" << endl;
+		cout << "smb will be sleep" << endl;
 	}
 }
 
@@ -52,7 +51,7 @@ for (string string; getline(cin, string); ) {
 		break;
 	}
 	else {
-		cout << "An error has occured while reading numbers from line" << endl;
+		cout << "smb don't let to be glad" << endl;
 	}
 }
 
