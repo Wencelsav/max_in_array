@@ -1,44 +1,61 @@
-#include <iostream>
-#include <sstream>
+#include "stdafx.h" #include "iostream" #include "sstream"
+
 using namespace std;
-int main()
-{ int a;
-	for( string string; getline( cin, string ); )
-	{
-        int s[ 10 ];
-        int max1 = 0;
-        
-        istringstream stream( string );
-        bool failure = false;
-        for( int i = 0; i < 10; ++i ) 
-	{if( !( stream >> s[ i ] ) )
-	{failure = true;break;}
-        }   if( !failure ) {
-            max1 = s[0];
-            for( int i = 0; i < 10; ++i )
-            {if(max1<s[i])
-                {max1=s[i];}
-            }cout<<max1<<'\n';
-        }
+
+int main() { int max1, max2, i, s[10], x[10];
+
+for (string string; getline(cin, string); ) {
+	istringstream stream(string);
+	bool failure = false;
+	for (int i = 0; i < 10; ++i) {
+		if (!(stream >> s[i])) {
+			failure = true;
+			break;
+		}
 	}
-   for( string string; getline( cin, string ); )
-	{
-        int x[ 10 ];
-        int max = 0;
-        
-        istringstream stream( string );
-        bool failure = false;
-        for( int i = 0; i < 10; ++i ) 
-	{if( !( stream >> x[ i ] ) )
-	{failure = true;break;}
-        }   if( !failure ) {
-            max = x[0];
-            for( int i = 0; i < 10; ++i )
-            {if(max<x[i])
-                {max=x[i];}
-            }cout<<max<<'\n';
-        }         
-      
-    } a = max + max1;
-      cout <<a<<'\n';
-} 
+
+	max1 = s[1];
+
+	if (!failure) {
+		for (int i = 0; i < 10; ++i) {
+			if (s[i] > max1) {
+				max1 = s[i];
+			}
+		}
+
+		break;
+	}
+	else {
+		cout << "" << endl;
+	}
+}
+
+for (string string; getline(cin, string); ) {
+	istringstream stream(string);
+	bool failure = false;
+	for (int i = 0; i < 10; ++i) {
+		if (!(stream >> x[i])) {
+			failure = true;
+			break;
+		}
+	}
+
+	max2 = x[1];
+
+	if (!failure) {
+		for (int i = 0; i < 10; ++i) {
+			if (x[i] > max2) {
+				max2 = x[i];
+			}
+		}
+
+		break;
+	}
+	else {
+		cout << "An error has occured while reading numbers from line" << endl;
+	}
+}
+
+cout << max1 + max2 << endl;
+return 0;
+}
