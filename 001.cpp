@@ -1,18 +1,25 @@
 #include <iostream>
 #include <sstream>
-using namespase std;
+using namespace std;
 int main()
 {
-	for (string;getline(cin, string); )
-  { int n[10];
-		istringstream stream(string);
-		bool failure = false;
-		for (int i = 0; i < 10; ++i) {
-			if (!(stream >> n[i])) {failure = true;break;}}
-		int max = n[0];
-		for (int i = 0; i < 10; ++i) {if (n[i]>max) {max = n[i];}	}
-		if (!failure) {cout << max;}
-		else {cout << "An error has occured while reading numbers from line" <<endl;}
-		return 0;
-	}
+	for( string string; getline( cin, string ); )
+	{
+        int s[ 10 ];
+        int max = 0;
+        istringstream stream( string );
+        bool failure = false;
+        for( int i = 0; i < 10; ++i ) 
+	{if( !( stream >> s[ i ] ) )
+	{failure = true;break;}
+        }   if( !failure ) {
+            max = s[0];
+            for( int i = 0; i < 10; ++i )
+            {if(max<s[i])
+                {max=s[i];}
+            }cout<<max<<'\n';
+        }else {
+            cout << "smb will be upset" << endl;
+        }
+    }
 }
