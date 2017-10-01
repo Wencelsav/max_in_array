@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main() { int max1, max2, i,j, s[10], x[10];
+int main() { int max1, max2, i,j, s[10], x[10], maxI, maxJ;
 
 for (string string; getline(cin, string); ) {
 	istringstream stream(string);
@@ -17,7 +17,7 @@ for (string string; getline(cin, string); ) {
 	if (!failure) {
 		for (int j = 0; j < 10; ++j) {
 			if (s[j] > max1) {
-				max1 = s[j];
+				max1 = s[j]; maxJ=j;
 			}
 		}
 
@@ -43,7 +43,7 @@ for (string string; getline(cin, string); ) {
 	if (!failure) {
 		for (int i = 0; i < 10; ++i) {
 			if (x[i] > max2) {
-				max2 = x[i];
+				max2 = x[i];maxI=i;
 			}
 		}
 
@@ -52,7 +52,7 @@ for (string string; getline(cin, string); ) {
 	else {
 		cout << "smb don't let to be glad" << endl;
 	}
-} if (i>=j){
+} if (maxI>=maxJ){
 
 cout << max1 + max2 << endl;}
             else {
