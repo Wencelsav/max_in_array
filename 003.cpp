@@ -3,9 +3,9 @@
 
 using namespace std;
 
-int main() { int max1, max2, i,j, s[10], x[10], maxI, maxJ;
+int main() { int max1, max2, maxI, maxJ;
 
-for (string string; getline(cin, string); ) {
+for (string string; getline(cin, string); ) { int s[10];
 	istringstream stream(string);
 	bool failure = false;
 	for (int j = 0; j < 10; ++j) {
@@ -28,7 +28,7 @@ for (string string; getline(cin, string); ) {
 	}
 }
 
-for (string string; getline(cin, string); ) {
+for (string string; getline(cin, string); ) {int x[10];
 	istringstream stream(string);
 	bool failure = false;
 	for (int i = 0; i < 10; ++i) {
