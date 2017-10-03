@@ -30,7 +30,7 @@ int main() {
 			}
 		}
 
-		max1 = s[1];
+		max1 = s[0];
 		for (int i = 0; i < 10; ++i) {
 
 			if (!(stream >> x[i])) {
@@ -43,7 +43,7 @@ int main() {
 
 		}
 
-		max2 = x[1];
+		max2 = x[0];
 
 		if (!failure) {
 
