@@ -1,51 +1,49 @@
-#include "iostream"
-
-#include "sstream"
+#include <iostream>
+#include <sstream>
 
 using namespace std;
 
-int main() {
-	int max1, max2, maxI, maxJ;
-
-	for (string string; getline(cin, string); ) {
-		int s[10];int x[10];
-		istringstream stream(string);
-		bool failure = false;
-		for (int j = 0; j < 10; ++j) {
-			if (!(stream >> s[j])) {
-				failure = true;
-				break;
-			}
-		}
-		max1 = s[0];
-		for (int i = 0; i < 10; ++i) {
-			if (!(stream >> x[i])) {
-				failure = true;
-				break;
-			}
-		}
-		max2 = x[0];
-		if (!failure) {
-			for (int j = 0; j < 10; ++j) {
-				if (s[j] > max1) {
-					max1 = s[j]; maxJ = j;
-				}
-			}
+int main()
+{
+	bool failure = false;
+	int max, maxsum;
+	int numbers[10];
+	int numbers1[10];
+	while (!failure) {
+		for (string string; getline(cin, string); ) {
+			istringstream stream(string);
 			for (int i = 0; i < 10; ++i) {
-				if (x[i] > max2) {
-					max2 = x[i]; maxI = i;
+				if (!(stream >> numbers[i])) {
+					failure = true;
+					break;
 				}
-			}
+			}break;
 		}
-		else {
-			cout << "smb will be sleep" << endl;
+		if (failure) { break; }
+		for (string string; getline(cin, string); ) {
+			istringstream stream(string);
+			for (int i = 0; i < 10; ++i) {
+				if (!(stream >> numbers1[i])) {
+					failure = true;
+					break;
+				}
+			}break;
+		}break;
+	}
+	max = numbers[0];
+	maxsum = max + numbers1[0];
+	for (int i = 1; i < 10; ++i) {
+		if (max<numbers[i]) {
+			max = numbers[i];
+		}
+		if (maxsum<max + numbers1[i]) {
+			maxsum = max + numbers1[i];
 		}
 	}
-	if (maxI >= maxJ) {
-		cout << max1 + max2 << endl;
+	if (!failure) {
+		cout << maxsum;
 	}
 	else {
-		cout << max2 << endl;
+		cout << "An error has occured while reading numbers from line" << endl;
 	}
-	return 0;
 }
